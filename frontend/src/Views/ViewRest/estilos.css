@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right,#a8e6cf, #dcedc1);
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Estilos para los campos de entrada */
+input[type="text"] {
+    width: 300px;
+    margin: 10px;
+    padding: 8px;
+    font-size: 16px;
+}
+
+/* Estilos para los botones */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #3dbb24;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #027e3a;
+}
+
+button.delete {
+    background-color: #dc3545;
+}
+
+button.delete:hover {
+    background-color: #bd2130;
+}
+
+button.edit {
+    background-color: #33a207;
+}
+
+button.edit:hover {
+    background-color: #318809;
+}
+
+/* Estilos para la lista de películas */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+li {
+    margin: 50px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 220px; /* Fixed width to make the items look proportional */
+}
+
+/* Estilos para las imágenes */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+}
