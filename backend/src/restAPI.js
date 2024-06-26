@@ -22,20 +22,21 @@ let movies = [
     }
 ];
 
-// Todas las peliculas
+// All movies
 router.get('/movies', (req, res) => {
     res.json(movies);
+    console.log('Query parameters:', req.query);
 });
 
-// Pelicula ID
+//Movie by id
 router.get('/movies/:id', (req, res) => {
     const movie = movies.find(m => m.id === parseInt(req.params.id));
-    if (!movie) return res.status(404).send('La película no fue encontrada');
+    if (!movie) return res.status(404).send('Movie not found');
     res.json(movie);
 });
 
-// Crear
 router.post('/movies', (req, res) => {
+    console.log(req.body);
     const newMovie = {
         id: movies.length + 1,
         title: req.body.title,
@@ -46,10 +47,10 @@ router.post('/movies', (req, res) => {
     res.status(201).json(newMovie);
 });
 
-// Actualizar
+
 router.put('/movies/:id', (req, res) => {
     const movie = movies.find(m => m.id === parseInt(req.params.id));
-    if (!movie) return res.status(404).send('La película no fue encontrada');
+    if (!movie) return res.status(404).send('Movie not found');
 
     movie.title = req.body.title;
     movie.director = req.body.director;
@@ -57,10 +58,10 @@ router.put('/movies/:id', (req, res) => {
     res.json(movie);
 });
 
-// Eliminar
+
 router.delete('/movies/:id', (req, res) => {
     const movieIndex = movies.findIndex(m => m.id === parseInt(req.params.id));
-    if (movieIndex === -1) return res.status(404).send('La película no fue encontrada');
+    if (movieIndex === -1) return res.status(404).send('Movie not found');
 
     const deletedMovie = movies.splice(movieIndex, 1);
     res.json(deletedMovie);
